@@ -12,7 +12,14 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; background:radial-gradient(1000px 700px at 15% -10%,#17203a 0%,#0b0f19 55%),var(--bg); color:var(--txt); line-height:1.55}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--txt);
+      line-height:1.55;
+      background-attachment: fixed;
+    }
     .container{max-width:860px;margin:0 auto;padding:28px 18px}
     .hero{display:grid;gap:14px; text-align:center; background:linear-gradient(180deg, rgba(96,165,250,.09), rgba(96,165,250,.03)); border:1px solid rgba(96,165,250,.2); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow)}
     .hero .icon{font-size:56px}
@@ -40,10 +47,17 @@
     footer{margin:34px 0 10px; text-align:center; color:var(--muted); font-size:13px}
     a.btn{display:inline-block; text-decoration:none; font-weight:800; letter-spacing:.2px; padding:12px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.18)}
     .btn-primary{background:linear-gradient(180deg,#60a5fa,#3b82f6); color:#081226}
+    .qr-alert{background:rgba(255,76,76,0.15); border:1px solid rgba(255,76,76,0.3); border-radius:var(--radius); text-align:center; padding:14px 20px; margin-bottom:18px; font-weight:700; color:#ff4c4c;}
   </style>
 </head>
 <body>
   <div class="container">
+
+    <!-- Section QR scanné -->
+    <div class="qr-alert">
+      Vous venez de scanner un QR code
+    </div>
+
     <header class="hero" role="banner">
       <div class="icon" aria-hidden="true">⚠️</div>
       <h1>Ne scannez <em>jamais</em> un QR code que vous ne connaissez pas</h1>
@@ -100,40 +114,24 @@
       <div class="grid cols-3">
         <div class="card"><h3>Parking</h3><p>Un QR collé sur l’horodateur mène à un faux paiement. Résultat : débit vers l’escroc.</p></div>
         <div class="card"><h3>Restaurant</h3><p>Menu QR remplacé : vous laissez vos données carte sur une page copiée.</p></div>
-        <div class="card"><h3>Colis</h3><p>QR “reprogrammer la livraison” : vous entrez vos identifiants et perdez l’accès au compte.</p></div>
+        <div class="card"><h3>Colis</h3><p>QR “reprogrammer la livraison” : vous entrez vos identifiants et perdez le colis.</p></div>
       </div>
     </section>
 
-    <section aria-labelledby="agir" id="agir">
-      <h2>Vous avez scanné un QR suspect ? Voici quoi faire</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Réaction immédiate</h3>
-          <ul class="steps">
-            <li><span class="dot"></span><div><strong>Fermez la page</strong> et coupez la connexion (Wi‑Fi/données) si un téléchargement démarre.</div></li>
-            <li><span class="dot"></span><div><strong>Ne tapez rien</strong> (codes, mots de passe, carte). Si vous l’avez fait : <strong>changez-les</strong> et <strong>opposez la carte</strong> si nécessaire.</div></li>
-            <li><span class="dot"></span><div><strong>Analysez l’appareil</strong> (antivirus/antimalware) et supprimez tout fichier téléchargé.</div></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Ensuite</h3>
-          <ul class="steps">
-            <li><span class="dot"></span><div><strong>Surveillez vos comptes</strong> (e‑mail, banque). Activez l’<span class="k">authentification à deux facteurs</span>.</div></li>
-            <li><span class="dot"></span><div><strong>Contactez le service officiel</strong> (via l’appli ou le site habituel) pour vérifier toute alerte.</div></li>
-            <li><span class="dot"></span><div><strong>Signalez</strong> l’arnaque au gestionnaire du lieu et aux plateformes officielles de signalement de votre pays.</div></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" aria-label="résumé">
-      <h2>Résumé clair</h2>
-      <p><strong>Règle d’or :</strong> si vous ne pouvez pas identifier l’émetteur et vérifier l’URL réelle, <strong>ne scannez pas</strong>. Un QR n’est qu’un raccourci : exigez toujours un <em>contexte</em> et un <em>domaine</em> fiables.</p>
+    <section id="agir" aria-labelledby="agir-title">
+      <h2 id="agir-title">Que faire si vous avez déjà scanné ?</h2>
+      <ul class="steps">
+        <li><span class="dot"></span>Fermez la page et ne cliquez sur rien.</li>
+        <li><span class="dot"></span>Scannez votre appareil avec un antivirus mobile ou vérifiez les applications inconnues.</li>
+        <li><span class="dot"></span>Changez vos mots de passe sensibles si vous avez entré des identifiants.</li>
+        <li><span class="dot"></span>Surveillez vos comptes bancaires pendant quelques jours.</li>
+      </ul>
     </section>
 
     <footer>
-      <p>Page de prévention — pensée pour un affichage via QR sur WPlace. Dernière mise à jour : 15 août 2025.</p>
+      ⚡ Site de prévention – Ne scannez pas n’importe quel QR code – 2025
     </footer>
+
   </div>
 </body>
 </html>
